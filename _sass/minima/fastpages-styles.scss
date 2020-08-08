@@ -266,7 +266,12 @@ table {
 
 .row1 {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  padding: 0 4px;
+}
+
+.column {
+  flex: 50%;
   padding: 0 4px;
 }
 
