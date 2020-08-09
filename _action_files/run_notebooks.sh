@@ -5,15 +5,16 @@ cd _notebooks/
 
 ERRORS=""
 
-file = "2020-08-06-dynamic.ipynb"
-
-if papermill --kernel python3 "${file}" "${file}"; then
-    echo "Sucessfully refreshed ${file}\n\n\n\n"
-    git add "${file}"
-else
-    echo "ERROR Refreshing ${file}"
-    ERRORS="${ERRORS}, ${file}"
-fi
+for file in *.ipynb
+do
+    if papermill --kernel python3 "${file}" "${file}"; then
+        echo "Sucessfully refreshed ${file}\n\n\n\n"
+        git add "${file}"
+    else
+        echo "ERROR Refreshing ${file}"
+        ERRORS="${ERRORS}, ${file}"
+    fi
+done
 
 
 # Emit Errors If Exists So Downstream Task Can Open An Issue
