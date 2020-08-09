@@ -5,7 +5,7 @@ cd _notebooks/
 
 ERRORS=""
 
-file = 2020-08-06-dynamic.ipynb
+file = "2020-08-06-dynamic.ipynb"
 
 if papermill --kernel python3 "${file}" "${file}"; then
     echo "Sucessfully refreshed ${file}\n\n\n\n"
